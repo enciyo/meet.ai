@@ -9,14 +9,14 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class MeetBot:
-    def __init__(self, meet_url, user_name, output_file_name):
+    def __init__(self, meet_url, user_name, output_file_name, language="tr-TR", api_key=None):
         self.meet_url = meet_url
         self.user_name = user_name
         self.output_file_name = output_file_name
         self.google_meet_connector = GoogleMeetConnector()
         self.audio_recorder = AudioRecorder(output_filename=output_file_name)
-        self.speech_recognition = SpeechRecognition()
-        self.summarizer = Summarizer()
+        self.speech_recognition = SpeechRecognition(language=language)
+        self.summarizer = Summarizer(api_key=api_key, language=language)
 
     def on_finish(self):
         logging.info("Google meet katılım bitti")
