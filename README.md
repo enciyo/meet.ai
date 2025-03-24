@@ -2,7 +2,7 @@
 
 ## English
 
-Meet.ai is a meeting bot that connects to Google Meet, records audio, transcribes speech, and provides meeting summaries. It uses SeleniumBase for browser automation, PyAudio for audio recording, and Google Cloud Speech-to-Text API for speech recognition.
+Meet.ai is a meeting bot that connects to Google Meet, records audio, transcribes speech, and provides meeting summaries. It uses SeleniumBase for browser automation, PyAudio for audio recording, and Google Cloud Speech-to-Text API for speech recognition. It uses `meet_bot.py`, `speech_rec.py`, `summarizer.py`, `audio_recorder.py` and `config.py` files.
 
 ### Features
 
@@ -20,6 +20,7 @@ Meet.ai is a meeting bot that connects to Google Meet, records audio, transcribe
 *   SpeechRecognition
 *   Google Cloud Speech-to-Text API key
 *   Google Meet account
+*   OpenAI API key
 *   Docker (for containerized deployment)
 
 ### Installation
@@ -45,8 +46,14 @@ Meet.ai is a meeting bot that connects to Google Meet, records audio, transcribe
 4.  Run the bot:
 
     ```bash
-    python app.py --meet-url <meet_url> --user-name <user_name> --output-file-name <output_file_name>
+    python app.py --meet-url <meet_url> --user-name <user_name> --output-file-name <output_file_name> --language <language> --api-key <api_key>
     ```
+
+    *   `--meet-url`: Google Meet URL (required).
+    *   `--user-name`: User name for Google Meet (optional, default: "Ai Bot").
+    *   `--output-file-name`: Output file name for audio recording (optional, default: "output.wav").
+    *   `--language`: Language for speech recognition (optional, default: "tr-TR").
+    *   `--api-key`: OpenAI API key (required).
 
 ### Docker Deployment
 
@@ -63,7 +70,7 @@ Meet.ai is a meeting bot that connects to Google Meet, records audio, transcribe
 
 ## Türkçe
 
-Meet.ai, Google Meet'e bağlanan, ses kaydeden, konuşmayı yazıya döken ve toplantı özetleri sağlayan bir toplantı botudur. Tarayıcı otomasyonu için SeleniumBase, ses kaydı için PyAudio ve konuşma tanıma için Google Cloud Speech-to-Text API'sini kullanır.
+Meet.ai, Google Meet'e bağlanan, ses kaydeden, konuşmayı yazıya döken ve toplantı özetleri sağlayan bir toplantı botudur. Tarayıcı otomasyonu için SeleniumBase, ses kaydı için PyAudio ve konuşma tanıma için Google Cloud Speech-to-Text API'sini kullanır. It uses `meet_bot.py`, `speech_rec.py`, `summarizer.py`, `audio_recorder.py` and `config.py` files.
 
 ### Özellikler
 
@@ -81,6 +88,7 @@ Meet.ai, Google Meet'e bağlanan, ses kaydeden, konuşmayı yazıya döken ve to
 *   SpeechRecognition
 *   Google Cloud Speech-to-Text API anahtarı
 *   Google Meet hesabı
+*   OpenAI API anahtarı
 *   Docker (konteynerize edilmiş dağıtım için)
 
 ### Kurulum
@@ -103,11 +111,17 @@ Meet.ai, Google Meet'e bağlanan, ses kaydeden, konuşmayı yazıya döken ve to
     *   Bir hizmet hesabı oluşturun ve kimlik bilgileri dosyasını indirin.
     *   `GOOGLE_APPLICATION_CREDENTIALS` ortam değişkenini, kimlik bilgileri dosyasının yoluna ayarlayın.
 
-4.  Botu çalıştırın:
+4.  Botu çalıştırmak için:
 
     ```bash
-    python app.py --meet-url <meet_url> --user-name <user_name> --output-file-name <output_file_name>
+    python app.py --meet-url <meet_url> --user-name <user_name> --output-file-name <output_file_name> --language <language> --api-key <api_key>
     ```
+
+    *   `--meet-url`: Google Meet URL'si (gerekli).
+    *   `--user-name`: Google Meet için kullanıcı adı (isteğe bağlı, varsayılan: "Ai Bot").
+    *   `--output-file-name`: Ses kaydı için çıktı dosya adı (isteğe bağlı, varsayılan: "output.wav").
+    *   `--language`: Konuşma tanıma için dil (isteğe bağlı, varsayılan: "tr-TR").
+    *   `--api-key`: OpenAI API anahtarı (gerekli).
 
 ### Docker ile Dağıtım
 
