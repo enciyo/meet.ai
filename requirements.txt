@@ -1,0 +1,5 @@
+seleniumbase
+pyaudio
+SpeechRecognition
+Click
+openai
