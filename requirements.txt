@@ -1,5 +1,5 @@
-seleniumbase
-pyaudio
-SpeechRecognition
-Click
-openai
+seleniumbase~=4.36.1
+pyaudio~=0.2.14
+Click~=8.1.8
+openai~=1.68.2
+pydub~=0.25.1

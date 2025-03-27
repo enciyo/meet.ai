@@ -4,6 +4,7 @@ import logging
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+
 class GoogleMeetConnector:
 
     def join_google_meet(self, meet_url: str, user_name: str, callback=None):
@@ -19,7 +20,7 @@ class GoogleMeetConnector:
                 logging.info(f"Typed username: {user_name}")
                 sb.click("//span[contains(text(),'Katılma isteği')]")
                 logging.info("Clicked 'Request to join'")
-                sb.wait_for_element("//div[contains(text(),'Bu toplantıda kimse yok')]", timeout=1000)
+                sb.wait_for_element("//div[contains(text(),'Bu toplantıda kimse yok')]", timeout=5000)
                 logging.info("Successfully joined Google Meet")
                 if callback:
                     callback()
